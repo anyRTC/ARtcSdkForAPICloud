@@ -1,0 +1,17 @@
+[
+ {
+ "name":"arRtc",
+ "class":"ARtcSdkForAPICloud",
+ "methods":["init", "destroy", "getSdkVersion", "setParameters", "setLogFile", "setLogFilter",
+            "joinChannel", "leaveChannel", "setChannelProfile", "setClientRole", "renewToken",
+            "enableVideo", "disableVideo", "enableLocalVideo", "setVideoProfile", "switchCamera",
+            "startPreview", "stopPreview", "setupLocalVideo", "setupRemoteVideo",
+            "muteLocalVideoStream", "muteAllRemoteVideoStreams", "muteRemoteVideoStream",
+            "enableAudio", "disableAudio","setEnableSpeakerphone", "setDefaultAudioRouteToSpeakerphone",
+            "muteLocalAudioStream", "muteAllRemoteAudioStreams", "muteRemoteAudioStream",
+            "joinChannelSuccessListener", "leaveChannelListener", "firstLocalVideoFrameListener",
+            "remoteUserJoinedListener", "remoteUserOfflineListener", "firstRemoteVideoDecodedListener",
+            "adjustRecordingSignalVolume", "adjustPlaybackSignalVolume", "adjustAudioMixingVolume",
+            "requestTokenListener", "errorListener", "warningListener"]
+ },
+]

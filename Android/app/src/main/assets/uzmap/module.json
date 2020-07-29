@@ -1,0 +1,8 @@
+{
+	"modules":[
+		{
+			"name":"arRtc",
+			"class":"org.apicloud.ar.rtc.ARRTCModule"
+		}
+	]
+}

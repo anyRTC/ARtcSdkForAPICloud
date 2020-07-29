@@ -1,0 +1,13 @@
+<widget id="A6049628486212"  version="0.0.2">
+    <name>ar-rtc</name>
+    <description>APICloud module extension for AR RTC.</description>
+    <author email="developer@agora.io" href="http://www.agora.io">
+        Developer
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <preference name="bounces" value="true" />
+    <preference name="debug" value="true" />
+    <preference name="customRefreshHeader" value="cusHeader" />
+</widget>
+

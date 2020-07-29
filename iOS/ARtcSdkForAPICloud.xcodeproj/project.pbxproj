@@ -1,0 +1,337 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6369146124B2CF58007B51EF /* ARtcSdkForAPICloud.m in Sources */ = {isa = PBXBuildFile; fileRef = 6369146024B2CF58007B51EF /* ARtcSdkForAPICloud.m */; };
+		6369146224B2CF58007B51EF /* ARtcSdkForAPICloud.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 6369145F24B2CF58007B51EF /* ARtcSdkForAPICloud.h */; };
+		6369A17E24D120A700DA1910 /* ARtcKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6369A17D24D120A700DA1910 /* ARtcKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		6369145A24B2CF58007B51EF /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				6369146224B2CF58007B51EF /* ARtcSdkForAPICloud.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		6369145C24B2CF58007B51EF /* libARtcSdkForAPICloud.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libARtcSdkForAPICloud.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		6369145F24B2CF58007B51EF /* ARtcSdkForAPICloud.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ARtcSdkForAPICloud.h; sourceTree = "<group>"; };
+		6369146024B2CF58007B51EF /* ARtcSdkForAPICloud.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ARtcSdkForAPICloud.m; sourceTree = "<group>"; };
+		636914C924B2FA71007B51EF /* UIViewControllerExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UIViewControllerExtension.h; sourceTree = "<group>"; };
+		636914CA24B2FA71007B51EF /* UZURLTask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UZURLTask.h; sourceTree = "<group>"; };
+		636914CB24B2FA71007B51EF /* UZModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UZModule.h; sourceTree = "<group>"; };
+		636914D224B2FA71007B51EF /* UZAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UZAppDelegate.h; sourceTree = "<group>"; };
+		636914D324B2FA71007B51EF /* UZAppUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UZAppUtils.h; sourceTree = "<group>"; };
+		636914D424B2FA71007B51EF /* NSDictionaryUtils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NSDictionaryUtils.h; sourceTree = "<group>"; };
+		6369A17D24D120A700DA1910 /* ARtcKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ARtcKit.framework; path = Sample/ARtcKit.framework; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6369145924B2CF58007B51EF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6369A17E24D120A700DA1910 /* ARtcKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6369145324B2CF58007B51EF = {
+			isa = PBXGroup;
+			children = (
+				636914C824B2FA71007B51EF /* UZEngine */,
+				6369145E24B2CF58007B51EF /* ARtcSdkForAPICloud */,
+				6369145D24B2CF58007B51EF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6369145D24B2CF58007B51EF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6369145C24B2CF58007B51EF /* libARtcSdkForAPICloud.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6369145E24B2CF58007B51EF /* ARtcSdkForAPICloud */ = {
+			isa = PBXGroup;
+			children = (
+				6369A17D24D120A700DA1910 /* ARtcKit.framework */,
+				6369145F24B2CF58007B51EF /* ARtcSdkForAPICloud.h */,
+				6369146024B2CF58007B51EF /* ARtcSdkForAPICloud.m */,
+			);
+			path = ARtcSdkForAPICloud;
+			sourceTree = "<group>";
+		};
+		636914C824B2FA71007B51EF /* UZEngine */ = {
+			isa = PBXGroup;
+			children = (
+				636914C924B2FA71007B51EF /* UIViewControllerExtension.h */,
+				636914CA24B2FA71007B51EF /* UZURLTask.h */,
+				636914CB24B2FA71007B51EF /* UZModule.h */,
+				636914D224B2FA71007B51EF /* UZAppDelegate.h */,
+				636914D324B2FA71007B51EF /* UZAppUtils.h */,
+				636914D424B2FA71007B51EF /* NSDictionaryUtils.h */,
+			);
+			name = UZEngine;
+			path = libs/UZEngine;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6369145B24B2CF58007B51EF /* ARtcSdkForAPICloud */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6369146524B2CF58007B51EF /* Build configuration list for PBXNativeTarget "ARtcSdkForAPICloud" */;
+			buildPhases = (
+				6369145824B2CF58007B51EF /* Sources */,
+				6369145924B2CF58007B51EF /* Frameworks */,
+				6369145A24B2CF58007B51EF /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ARtcSdkForAPICloud;
+			productName = ARtcSdkForAPICloud;
+			productReference = 6369145C24B2CF58007B51EF /* libARtcSdkForAPICloud.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6369145424B2CF58007B51EF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = AR;
+				TargetAttributes = {
+					6369145B24B2CF58007B51EF = {
+						CreatedOnToolsVersion = 11.3;
+					};
+				};
+			};
+			buildConfigurationList = 6369145724B2CF58007B51EF /* Build configuration list for PBXProject "ARtcSdkForAPICloud" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6369145324B2CF58007B51EF;
+			productRefGroup = 6369145D24B2CF58007B51EF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6369145B24B2CF58007B51EF /* ARtcSdkForAPICloud */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6369145824B2CF58007B51EF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6369146124B2CF58007B51EF /* ARtcSdkForAPICloud.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		6369146324B2CF58007B51EF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		6369146424B2CF58007B51EF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6369146624B2CF58007B51EF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5543CP4MRT;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ARtcSdkForAPICloud",
+					"$(PROJECT_DIR)/Sample",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/libs/UZEngine/Dependencies",
+					"$(PROJECT_DIR)/libs/UZEngine",
+				);
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6369146724B2CF58007B51EF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5543CP4MRT;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ARtcSdkForAPICloud",
+					"$(PROJECT_DIR)/Sample",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/libs/UZEngine/Dependencies",
+					"$(PROJECT_DIR)/libs/UZEngine",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6369145724B2CF58007B51EF /* Build configuration list for PBXProject "ARtcSdkForAPICloud" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6369146324B2CF58007B51EF /* Debug */,
+				6369146424B2CF58007B51EF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6369146524B2CF58007B51EF /* Build configuration list for PBXNativeTarget "ARtcSdkForAPICloud" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6369146624B2CF58007B51EF /* Debug */,
+				6369146724B2CF58007B51EF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6369145424B2CF58007B51EF /* Project object */;
+}

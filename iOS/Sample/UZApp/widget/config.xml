@@ -1,0 +1,16 @@
+<widget id="A123456789"  version="4.0.0">
+    <name>ar-rtc</name>
+    <description>ARtcSdkForAPICloud</description>
+    <author email="" href="">
+        Developer
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <preference name="bounces" value="true" />
+    <preference name="debug" value="true" />
+    <preference name="customRefreshHeader" value="cusHeader" />
+    <feature name="arRtc">
+        <param name="appId" value="" />
+    </feature>
+</widget>
+

@@ -1,0 +1,336 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="maximum-scale=1.0, minimum-scale=1.0, user-scalable=0, initial-scale=1.0, width=device-width" />
+	<meta name="format-detection" content="telephone=no, email=no, date=no, address=no">
+	<title>WinA</title>
+	<link rel="stylesheet" type="text/css" href="css/api.css" />
+	<link rel="stylesheet" type="text/css" href="css/box.css" />
+	<script type="text/javascript" src="script/public.js"></script>
+	<style>
+		p {
+    		color:#999;
+    		padding:5px;
+    	}
+    </style>
+
+	<script type="text/javascript">
+
+		var uzmodule_ar_rtc = null;
+		apiready = function () {
+			uzmodule_ar_rtc = api.require('arRtc');
+		}
+
+		function init() {
+			var param = { appId: YOUR APP ID};
+			uzmodule_ar_rtc.init(param);
+
+			var methodCallbackJoinChannel = function (ret, err) {
+                /** alert(ret.channel + " join success"); **/
+			}
+			uzmodule_ar_rtc.joinChannelSuccessListener(methodCallbackJoinChannel);
+
+			var methodCallbackRemoteVideoDecode = function (ret, err) {
+				setupRemoteVideo(ret.uid);
+			}
+			uzmodule_ar_rtc.firstRemoteVideoDecodedListener(methodCallbackRemoteVideoDecode);
+
+			var methodCallbackLeaveChannel = function (ret, err) {
+				uzmodule_ar_rtc.setupLocalVideo();
+			}
+			uzmodule_ar_rtc.leaveChannelListener(methodCallbackLeaveChannel);
+
+			var methodCallbackUserOffine = function (ret, err) {
+				uzmodule_ar_rtc.setupRemoteVideo({ uid: ret.uid });
+			}
+			uzmodule_ar_rtc.remoteUserOfflineListener(methodCallbackUserOffine);
+
+			uzmodule_ar_rtc.enableVideo();
+
+			var paramChannelProfile = { profile: 1 };
+			uzmodule_ar_rtc.setChannelProfile(paramChannelProfile);
+
+			var paramClientRole = { role: 1 };
+			uzmodule_ar_rtc.setClientRole(paramClientRole);
+
+			var paramVideoProfile = { width: 360, height: 640, frameRate: 15, bitrate: 800 };
+			uzmodule_ar_rtc.setVideoProfile(paramVideoProfile);
+
+			setupLocalVideo();
+
+			var paramJoinChannel = { token: "", channel: "808080", uid: "" };
+			uzmodule_ar_rtc.joinChannel(paramJoinChannel);
+		}
+
+		/** --------- simple example -------- **/
+
+		function getSdkVersion() {
+			var resultCallback = function (ret, err) {
+				alert(ret);
+			}
+			uzmodule_ar_rtc.getSdkVersion(resultCallback);
+		}
+
+		function setParameters() {
+			var param = { params: "{\"che.video.enableRemoteViewMirror\":true}" };
+			var resultCallback = function (ret, err) {
+				alert(ret.code);
+			}
+			uzmodule_ar_rtc.setParameters(param, resultCallback);
+		}
+
+		function setLogFile() {
+			var param;
+			if (api.systemType == "android") {
+				param = { path: "/sdcard/ar_rtc.log" };
+			} else if (api.systemType == "ios") {
+				param = { path: "cache://ar_rtc.log" };
+			}
+
+			var resultCallback = function (ret, err) {
+				alert(ret.code);
+			}
+			uzmodule_ar_rtc.setLogFile(param, resultCallback);
+		}
+
+		function setLogFilter() {
+			var param = { filter: 65535 };
+			var resultCallback = function (ret, err) {
+				alert(ret.code);
+			}
+			uzmodule_ar_rtc.setLogFilter(param, resultCallback);
+		}
+
+		function joinChannel() {
+			var param = { token: "", channelId: "808080", uid: "" };
+			uzmodule_ar_rtc.joinChannel(param);
+		}
+
+		function leaveChannel() {
+			uzmodule_ar_rtc.leaveChannel();
+		}
+
+		function setChannelProfile() {
+			var param = { profile: 1 };
+			uzmodule_ar_rtc.setChannelProfile(param);
+		}
+
+		function setClientRole() {
+			var param = { role: 1 };
+			uzmodule_ar_rtc.setClientRole(param);
+		}
+
+		function renewToken() {
+			var param = { token: "" };
+			uzmodule_ar_rtc.renewToken(param);
+		}
+
+		function enableVideo() {
+			uzmodule_ar_rtc.enableVideo();
+		}
+
+		function disableVideo() {
+			uzmodule_ar_rtc.disableVideo();
+		}
+
+		function enableLocalVideo() {
+			var param = { enabled: true };
+			uzmodule_ar_rtc.enableLocalVideo(param);
+		}
+
+		function setEnableSpeakerphone() {
+			var param = { enabled: true };
+			uzmodule_ar_rtc.setEnableSpeakerphone(param);
+		}
+
+		function setDefaultAudioRouteToSpeakerphone() {
+			var param = { enabled: true };
+			uzmodule_ar_rtc.setDefaultAudioRouteToSpeakerphone(param);
+		}
+
+		function setVideoProfile() {
+			var param = { width: 360, height: 640, frameRate: 15, bitrate: 800 };
+			uzmodule_ar_rtc.setVideoProfile(param);
+		}
+
+		function adjustRecordingSignalVolume() {
+			var paramRecordingSignalVolume = { volume: 200 };
+			uzmodule_ar_rtc.adjustRecordingSignalVolume(paramRecordingSignalVolume);
+		}
+
+		function setupLocalVideo() {
+			var paramLocalVideoView = {
+				rect: {
+					x: 20,
+					y: 20,
+					w: 200,
+					h: 200
+				},
+				fixedOn: 'index_frm',
+				fixed: false,
+				renderMode: 1
+			};
+			uzmodule_ar_rtc.setupLocalVideo(paramLocalVideoView);
+		}
+
+		function startPreview() {
+			uzmodule_ar_rtc.startPreview();
+		}
+
+		function stopPreview() {
+			uzmodule_ar_rtc.stopPreview();
+		}
+
+		function switchCamera() {
+			uzmodule_ar_rtc.switchCamera();
+		}
+
+		function setupRemoteVideo(uid) {
+			var paramRemoteVideoView = {
+				uid: uid,
+				rect: {
+					x: 0,
+					y: 0,
+					w: 0,
+					h: 360
+				},
+				fixedOn: 'index_frm',
+				fixed: false,
+				renderMode: 1
+			};
+			uzmodule_ar_rtc.setupRemoteVideo(paramRemoteVideoView);
+		}
+
+		function muteLocalVideoStream() {
+			var param = { mute: true };
+			uzmodule_ar_rtc.muteLocalVideoStream(param);
+		}
+
+		function muteAllRemoteVideoStreams() {
+			var param = { mute: true };
+			uzmodule_ar_rtc.muteAllRemoteVideoStreams(param);
+		}
+
+		function muteRemoteVideoStream() {
+			var param = { mute: true };
+			uzmodule_ar_rtc.muteRemoteVideoStream(param);
+		}
+
+		function enableAudio() {
+			uzmodule_ar_rtc.enableAudio();
+		}
+
+		function disableAudio() {
+			uzmodule_ar_rtc.disableAudio();
+		}
+
+		function pauseAudio() {
+			uzmodule_ar_rtc.pauseAudio();
+		}
+
+		function resumeAudio() {
+			uzmodule_ar_rtc.resumeAudio();
+		}
+
+		function muteLocalAudioStream() {
+			var param = { mute: true };
+			uzmodule_ar_rtc.muteLocalAudioStream(param);
+		}
+
+		function muteAllRemoteAudioStreams() {
+			var param = { mute: true };
+			uzmodule_ar_rtc.muteAllRemoteAudioStreams(param);
+		}
+
+		function muteRemoteAudioStream() {
+			var param = { uid: '', mute: true };
+			uzmodule_ar_rtc.muteRemoteAudioStream(param);
+		}
+
+		/** -----------callback method---------------- **/
+		function warningListener() {
+			var methodCallback = function (ret, err) {
+
+			}
+			uzmodule_ar_rtc.warningListener(methodCallback);
+		}
+
+		function errorListener() {
+			var methodCallback = function (ret, err) {
+
+			}
+			uzmodule_ar_rtc.errorListener(methodCallback);
+		}
+
+		function requestTokenListener() {
+			var methodCallback = function (ret, err) {
+
+			}
+			uzmodule_ar_rtc.requestTokenListener(methodCallback);
+		}
+
+		function joinChannelSuccessListener() {
+			var methodCallback = function (ret, err) {
+
+			}
+			uzmodule_ar_rtc.joinChannelSuccessListener(methodCallback);
+		}
+
+		function leaveChannelListener() {
+			var methodCallback = function (ret, err) {
+
+			}
+			uzmodule_ar_rtc.leaveChannelListener(methodCallback);
+		}
+
+		function firstLocalVideoFrameListener() {
+			var methodCallback = function (ret, err) {
+
+			}
+			uzmodule_ar_rtc.firstLocalVideoFrameListener(methodCallback);
+		}
+
+		function firstRemoteVideoDecodedListener() {
+			var methodCallback = function (ret, err) {
+
+			}
+			uzmodule_ar_rtc.firstRemoteVideoDecodedListener(methodCallback);
+		}
+
+		function remoteUserJoinedListener() {
+			var methodCallback = function (ret, err) {
+
+			}
+			uzmodule_ar_rtc.remoteUserJoinedListener(methodCallback);
+		}
+
+		function remoteUserOfflineListener() {
+			var methodCallback = function (ret, err) {
+
+			}
+			uzmodule_ar_rtc.remoteUserOfflineListener(methodCallback);
+		}
+
+	</script>
+</head>
+
+<body>
+	<div id="wrap">
+		<div id="main">
+			<br>
+			<div class="clickbtn" tapmode="active" onclick="init()">Join Channel</div>
+			<div class="clickbtn" tapmode="active" onclick="getSdkVersion()">GetSdkVersion</div>
+			<lable></lable>
+			<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+			<div class="clickbtn" tapmode="active" onclick="leaveChannel()">Leave Channel</div>
+			<div class="clickbtn" tapmode="active" onclick="muteLocalAudioStream()">Mute Local Audio</div>
+			<div class="clickbtn" tapmode="active" onclick="switchCamera()">Switch Camera</div>
+
+			<br>
+		</div>
+	</div>
+</body>
+
+</html>
